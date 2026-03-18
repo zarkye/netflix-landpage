@@ -26,7 +26,7 @@ const idiomas = createListCollection({
 
 export default function Header(props: StackProps) {
     return (
-        <HStack
+        <HStack as="header"
             zIndex={50}
             px={{ base: "32px", md: "148px", lg: "338px" }}
             py={0}
@@ -58,29 +58,28 @@ export default function Header(props: StackProps) {
                         width="146px"
                         height="32px"
                         defaultValue={["pt"]}
-                        fontWeight="black"
+                        
                         fontFamily="sans-serif"
                     >
                         <Select.HiddenSelect />
-                        <Select.Control>
+                        <Select.Control fontWeight="500">
                             <Select.Trigger
                                 bg="gray.950/80"
                                 color="white"
-                                border="1px solid rgba(255, 255, 255, 0.3)"
+                                border="1px solid rgba(255, 255, 255, 0.5)"
                                 borderRadius="4px"
                                 px={3}
                                 _open={{
-                                    borderStyle: "double",
-                                    borderColor: "#fff",
+                                    outline: "2px solid white", outlineOffset: "2px"
                                 }}
                                 display="flex"
                                 alignItems="center"
                                 fontSize={16}
-                                fontWeight="400"
+                                fontWeight="500"
                             >
                                 <LuLanguages />
 
-                                <Select.ValueText placeholder="Idioma" />
+                                <Select.ValueText fontWeight="bold" placeholder="Idioma" />
 
                                 <NextImage
                                     height={3.86}

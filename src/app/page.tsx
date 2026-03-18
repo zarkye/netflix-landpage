@@ -13,32 +13,27 @@ import {
     Flex,
     Heading,
     Input,
+    Icon,
 } from "@chakra-ui/react";
 import NextImage from "next/image";
 import netflixLogo from "../../public/assets/netflixLogo.svg";
 import caretDown from "../../public/assets/caretDown.svg";
-import { LuLanguages } from "react-icons/lu";
+import {
+    LuArrowRight,
+    LuArrowRightToLine,
+    LuChevronRight,
+    LuLanguages,
+} from "react-icons/lu";
 import Header from "@/components/Header/header";
-import netflixBackground from "../../public/assets/netflix-background.jpg";
+import netflixBackground2 from "../../public/assets/netflix-background2.jpg";
 import { Open_Sans } from "next/font/google";
-
-const idiomas = createListCollection({
-    items: [
-        { label: "Português", value: "pt" },
-        { label: "English", value: "en" },
-    ],
-});
 
 export default function Home() {
     return (
-        <Box position="relative" w="100%" h="100vh" overflow="hidden">
-            <Box
-                position="absolute"
-                inset={0}
-                zIndex={0}
-            >
+        <Box position="relative" w="100%" h="100vh" overflowX="hidden">
+            <Box position="absolute" inset={0} zIndex={0}>
                 <NextImage
-                    src={netflixBackground}
+                    src={netflixBackground2}
                     alt="plano de fundo da netflix"
                     fill
                     style={{ objectFit: "cover" }}
@@ -70,8 +65,9 @@ export default function Home() {
                     zIndex={3}
                     borderTopLeftRadius="50% 100%"
                     borderTopRightRadius="50% 100%"
-                    bg={`
-        radial-gradient(40% 100% at 50% 5%, rgba(64,97,231,0.35), transparent 90%),
+                    //esse bg é o glow azul em baixo da linha vermelha curvada
+                    bg={` 
+        radial-gradient(30% 100% at 50% 5%, rgba(64,97,231,0.35), transparent 90%), 
         black
     `}
                     bgClip="padding-box"
@@ -106,42 +102,116 @@ export default function Home() {
 
             <Header position="absolute" top={0} zIndex={50} />
 
-            <VStack marginX="500px" position="relative" zIndex={2} pt="345px" color="white">
+            <VStack
+                w="full"
+                maxW="800px"
+                mx="auto"
+                position="relative"
+                zIndex={2}
+                pt={{ base: "100px", lg: "300px" }}
+                px="20px"
+                color="white"
+                textAlign="center"
+            >
                 <Heading
-                    fontSize={{ lg: "62px" }}
+                    fontSize={{ base: "32px", md: "48px", lg: "62px" }}
                     fontWeight="black"
-                    lineHeight="80px"
-                    minW="588px"
-                    maxH="140px"
-                    marginBottom="32px"
-                    textAlign="center"
+                    lineHeight={{ base: "1.2", lg: "80px" }}
+                    marginBottom="24px"
                     textWrap="balance"
-                    fontFamily={"sans-serif"}
-                    letterSpacing={"tighter"}
+                    fontFamily="sans-serif"
+                    letterSpacing="tighter"
+                    marginTop="32px"
                 >
                     Filmes, séries e muito mais, sem limites
                 </Heading>
-                <Text fontSize="20px" fontWeight="500"marginBottom="28px" fontFamily={"sans-serif"}>
+
+                <Text
+                    fontSize={{ base: "18px", lg: "20px" }}
+                    fontWeight="600"
+                    marginBottom="24px"
+                    fontFamily="sans-serif"
+                >
                     A partir de R$ 20,90. Cancele quando quiser.
                 </Text>
-                <Text fontSize={"16px"} margin={0} fontFamily={"sans-serif"}>
-                    Quer assistir? Informe seu email para criar ou reiniciar sua assinatura.
+
+                <Text fontSize="16px" margin={0} fontFamily="sans-serif">
+                    Quer assistir? Informe seu email para criar ou reiniciar sua
+                    assinatura.
                 </Text>
-                <HStack marginTop="8px">
-                    <Input
-                        placeholder="Email"
-                        fontWeight="700"
-                        padding="24px 16px 8px 16px"
-                        w="395px"
+
+                <Flex
+                    mt="8px"
+                    w="665px"
+                    flexDir={{ base: "column", md: "row" }}
+                    gap="10px"
+                    align="center"
+                >
+                    <Box position="relative" w="100%">
+                        <Input
+                            placeholder=" "
+                            className="peer"
+                            fontWeight="600"
+                            color="rgba(255, 255, 255, 0.8)"
+                            type="email"
+                            fontSize="md"
+                            h="56px"
+                            border="1px solid rgba(255, 255, 255, 0.3)"
+                            bg="rgba(24, 23, 21, 0.6)"
+                            boxShadow="0 0 30px rgba(109, 99, 95, 0.1)"
+                            paddingX="16px"
+                            paddingTop="24px"
+                            paddingBottom="8px"
+                            _focus={{
+                                outline: "2px solid white",
+                                outlineOffset: "2px",
+                            }}
+                        />
+
+                        <Text
+                            position="absolute"
+                            left="16px"
+                            top="50%"
+                            transform="translateY(-50%)"
+                            fontSize="md"
+                            color="rgba(255,255,255,0.7)"
+                            pointerEvents="none"
+                            fontWeight="500"
+                            _peerFocus={{
+                                top: "16px",
+                                fontSize: "12px",
+                            }}
+                            _before={{
+                                ".peer:not(:placeholder-shown) + &": {
+                                    top: "16px",
+                                    fontSize: "12px",
+                                },
+                            }}
+                        >
+                            Email
+                        </Text>
+                    </Box>
+                    <Button
+                        color="#fff"
+                        bgColor="red"
                         h="56px"
-                        border="1px solid rgba(255, 255, 255, 0.3)"
-                        bg="gray.950/80"
-                    />
-                    <Button color="#fff"bgColor="red" h="56px" w="184px" fontSize="24px" fontWeight="700" fontFamily={"sans-serif"}>
+                        px="30px"
+                        w="185px"
+                        fontSize="24px"
+                        fontWeight="700"
+                        fontFamily="sans-serif"
+                        _hover={{ bg: "red.600" }}
+                    >
                         Vamos Lá
+                        <Icon as={LuChevronRight} boxSize={8} />
                     </Button>
-                </HStack>
+                </Flex>
             </VStack>
+            <Box pt={200} px={355}>
+                <VStack pt={200} bgColor={"black"} justifyContent={"flex-start"} align={"start"} zIndex={10} w="100%" h="100vh">
+                    <Text fontSize="32px" fontWeight="bold">Em alta</Text>
+                </VStack>
+            </Box>
         </Box>
     );
 }
