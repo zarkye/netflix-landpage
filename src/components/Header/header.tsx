@@ -12,10 +12,8 @@ import {
     StackProps,
 } from "@chakra-ui/react";
 import NextImage from "next/image";
-import netflixLogo from "../../../public/assets/netflixLogo.svg";
-import caretDown from "../../../public/assets/caretDown.svg";
+
 import { LuLanguages } from "react-icons/lu";
-import netflixBackground from "../../../public/assets/netflix-background.jpg";
 
 const idiomas = createListCollection({
     items: [
@@ -47,7 +45,7 @@ export default function Header(props: StackProps) {
                     <NextImage
                         height={40}
                         width={148}
-                        src={netflixLogo}
+                        src="/assets/netflixLogo.svg"
                         alt="Netflix"
                     />
                 </Box>
@@ -84,7 +82,7 @@ export default function Header(props: StackProps) {
                                 <NextImage
                                     height={3.86}
                                     width={7.53}
-                                    src={caretDown}
+                                    src="/assets/caretDown.svg"
                                     alt="Icone para abrir a caixa de seleção de idiomas"
                                 />
                             </Select.Trigger>
