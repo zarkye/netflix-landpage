@@ -24,7 +24,8 @@ const idiomas = createListCollection({
 
 export default function Header(props: StackProps) {
     return (
-        <HStack as="header"
+        <HStack
+            as="header"
             zIndex={50}
             px={{ base: "32px", md: "148px", lg: "338px" }}
             py={0}
@@ -52,38 +53,44 @@ export default function Header(props: StackProps) {
                 <HStack w="100%" justify={"flex-end"} gap={0}>
                     <Select.Root
                         collection={idiomas}
-                        size="xs"
                         width="146px"
-                        height="32px"
                         defaultValue={["pt"]}
-                        
-                        fontFamily="sans-serif"
+                        fontFamily="var(--font-netflix-tight)"
                     >
                         <Select.HiddenSelect />
-                        <Select.Control fontWeight="500">
+                        <Select.Control>
                             <Select.Trigger
                                 bg="gray.950/80"
                                 color="white"
                                 border="1px solid rgba(255, 255, 255, 0.5)"
                                 borderRadius="4px"
-                                px={3}
+                                px={2}
+                                h="32px"
+                                minH="32px"
+                                py={0}
+                                
                                 _open={{
-                                    outline: "2px solid white", outlineOffset: "2px"
+                                    outline: "2px solid white",
+                                    outlineOffset: "2px",
                                 }}
                                 display="flex"
                                 alignItems="center"
                                 fontSize={16}
-                                fontWeight="500"
+                                lineHeight="normal"
                             >
                                 <LuLanguages />
 
-                                <Select.ValueText fontWeight="bold" placeholder="Idioma" />
+                                <Select.ValueText
+                                    fontWeight="bold"
+                                    placeholder="Idioma"
+                                />
 
                                 <NextImage
-                                    height={3.86}
-                                    width={7.53}
+                                    height={16}
+                                    width={16}
                                     src="/assets/caretDown.svg"
                                     alt="Icone para abrir a caixa de seleção de idiomas"
+                                    style={{ filter: "invert(100%)" }}
                                 />
                             </Select.Trigger>
                         </Select.Control>
@@ -114,7 +121,14 @@ export default function Header(props: StackProps) {
                             </Select.Positioner>
                         </Portal>
                     </Select.Root>
-                    <Button ml="12px" h="32px" bgColor="rgb(229, 9, 20)" color="white" fontWeight="bold" fontSize={14} fontFamily="sans-serif">
+                    <Button
+                        ml="12px"
+                        h="32px"
+                        bgColor="rgb(229, 9, 20)"
+                        color="white"
+                        fontFamily="var(--font-netflix-core)"
+                        fontSize={14}
+                    >
                         Entrar
                     </Button>
                 </HStack>

@@ -39,17 +39,17 @@ export default function NetflixCard({ numero, img, alt }: NetflixCardProps) {
 
             <Text
                 position="absolute"
-                bottom="-30px"
+                bottom="-43px"
                 left="-22px"
-                fontSize="100px"
-                fontFamily="'Arial Black'"
+                fontSize="120px"
+                fontFamily="var(--font-netflix-black)"
                 fontWeight="900"
-                color="black"
+                color="#000"
                 lineHeight={2}
                 textShadow="2px 2px 4px rgba(0,0,0,0.5)"
                 zIndex={2}
                 style={{
-                    WebkitTextStroke: '2px white',
+                    WebkitTextStroke: '1px white',
                 }}
             >
                 {numero}
