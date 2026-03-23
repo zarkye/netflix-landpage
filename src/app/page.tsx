@@ -16,6 +16,7 @@ import NextImage from "next/image";
 import { LuChevronRight, LuChevronLeft } from "react-icons/lu";
 import Header from "@/components/Header/header";
 import NetflixCard from "@/components/CardRank/card";
+import SaibaMais from "@/components/CardSaibaMais/saibamais";
 
 export default function Home() {
     const carouselRef = useRef<HTMLDivElement>(null);
@@ -276,169 +277,14 @@ export default function Home() {
                 pb="100px"
                 px={{ base: "140px", xl: "355px" }}
             >
-                <Box w="100%" paddingTop={0} marginBottom="64px" height="77px">
-                    <Box
-                        boxSizing="border-box"
-                        display="block"
-                        height="77px"
-                        transition="all 0.5s cubic-bezier(0.33, 0, 0, 1)"
-                    >
-                        <Box
-                            boxSizing="border-box"
-                            display="inherit"
-                            height="auto"
-                            width="100%"
-                            position="relative"
-                        >
-                            <Box
-                                position="absolute"
-                                top="-9px"
-                                zIndex={2}
-                                display="block"
-                                width="96px"
-                            >
-                                <NextImage
-                                    src="/assets/popcorn.svg"
-                                    alt="pipoca"
-                                    height={77}
-                                    width={77}
-                                />
-                            </Box>
-                            <Box
-                                position="relative"
-                                marginLeft="100px"
-                                height="77px"
-                                backgroundClip="border-box"
-                                bg="linear-gradient(91deg, #261733, #151a3f)"
-                                borderRadius="16px"
-                                _before={{
-                                    inset: 0,
-                                    position: "absolute",
-                                    content: "''",
-                                    borderRadius: "16px",
-                                    bg: "linear-gradient(91deg, #482566 0%, #161d52 99.51%)",
-                                    transition:
-                                        "opacity 0.5s cubic-bezier(0.33, 0, 0, 1)",
-                                    opacity: 0,
-                                }}
-                                _hover={{
-                                    _before: {
-                                        opacity: 1,
-                                    },
-                                }}
-                            >
-                                <Box
-                                    boxSizing="border-box"
-                                    display="flex"
-                                    minHeight="77px"
-                                    width="100%"
-                                >
-                                    <Box
-                                        alignItems="center"
-                                        boxSizing="border-box"
-                                        display="flex"
-                                        flexDirection="row"
-                                        flexWrap="wrap"
-                                        
-                                        paddingX="32px"
-                                        width="100%"
-                                        justifyContent={"space-between"}
-                                    >
-                                        <Box
-                                            alignItems="normal"
-                                            boxSizing="border-box"
-                                            display="flex"
-                                            flexDirection="column"
-                                            flexBasis="auto"
-                                            flexGrow={1}
-                                            flexShrink={1}
-                                            justifyContent="center"
-                                            maxWidth="445px"
-                                            width="100%"
-                                            zIndex={3}
-                                            position="relative"
-                                            gap={0}
-                                            marginLeft="6px"
-                                        >
-                                            <Text
-                                                as="h3"
-                                                width="100%"
-                                                marginBottom="0px"
-                                                fontFamily="var(--font-netflix-core)"
-                                                fontSize="20px"
-                                                fontWeight="500"
-                                                color="white"
-                                                
-                                                marginTop="6px"
-                                                lineHeight="1.2"
-                                            >
-                                                A Netflix que você adora por
-                                                apenas R$ 20,90.
-                                            </Text>
-
-                                            <Text
-                                                as="p"
-                                                whiteSpace="nowrap"
-                                                width="100%"
-                                                margin={0}
-                                                fontSize="16px"
-                                                fontWeight="400"
-                                                color="white"
-                                                fontFamily="var(--font-netflix-core)"
-                                            >
-                                                Aproveite nossa opção mais
-                                                acessível, o plano com anúncios.
-                                            </Text>
-                                        </Box>
-                                        <Box
-                                            alignItems="center"
-                                            boxSizing="border-box"
-                                            display="flex"
-                                            flexBasis={"auto"}
-                                            flexGrow={0}
-                                            flexShrink={1}
-                                            
-                                           
-                                            justifyContent={"center"}
-                                            
-                                            padding={0}
-                                            maxWidth="111px"
-                                            fontFamily="var(--font-netflix-core)"
-                                        >
-                                            <Button
-                                                
-                                                alignItems="center"
-                                                boxSizing="border-box"
-                                                display="flex"
-                                                
-                                                overflow="visible"
-                                                margin={0}
-                                                color="white"
-                                                width="100%"
-                                                
-                                                bg="rgba(128, 128, 128, 0.4)"
-                                                borderRadius={"4px"}
-                                                fontSize={"16px"}
-                                                _hover={
-                                                    {bg: "rgba(128, 128, 128, 0.3)"}
-                                                }
-                                            >
-                                                Saiba mais
-                                            </Button>
-                                        </Box>
-                                    </Box>
-                                </Box>
-                            </Box>
-                        </Box>
-                    </Box>
-                </Box>
+                <SaibaMais/>
 
                 <Text
                     fontSize="32px"
                     fontWeight="bold"
                     color="white"
                     mt="20px"
-                    mb="16px"
+                    fontFamily="var(--font-netflix-core)"
                 >
                     Em alta
                 </Text>
@@ -448,6 +294,8 @@ export default function Home() {
                     position="relative"
                     w="100%"
                     h="100%"
+                    top={-3}
+                    left={-4}
                     zIndex={50}
                 >
                     <Flex
@@ -455,11 +303,11 @@ export default function Home() {
                         left="0"
                         top="0"
                         bottom="0"
-                        w="50px"
+                        w="90px"
                         bg="#000"
                         zIndex={10}
                         align="center"
-                        justify="flex-start"
+                        justify="center"
                         pl="8px"
                         color="gray.300"
                         opacity={showLeftBtn ? 1 : 0}
@@ -467,7 +315,7 @@ export default function Home() {
                         transform={
                             showLeftBtn ? "translateX(0)" : "translateX(-100%)"
                         }
-                        transition="all 0.3s ease-in-out"
+                        transition="transform 0.5s, opacity 0.2s ease-out"
                     >
                         <Flex
                             h="120px"
@@ -534,7 +382,7 @@ export default function Home() {
                         transform={
                             showRightBtn ? "translateX(0)" : "translateX(100%)"
                         }
-                        transition="all 0.3s ease-in-out"
+                        transition="all 0.5s ease-in-out"
                     >
                         <Flex
                             h="120px"
@@ -548,6 +396,57 @@ export default function Home() {
                             <Icon as={LuChevronRight} boxSize={6} />
                         </Flex>
                     </Flex>
+                </Box>
+                <Box
+                    height="400px"
+                    marginTop={"16px"}
+                    marginBottom="64px"
+                    width="100%"
+                    textSizeAdjust="100%"
+                >
+                    <Box
+                        boxSizing="border-box"
+                        display="block"
+                        height="auto"
+                        width="100%"
+                    >
+                        <Box
+                            alignItems="normal"
+                            boxSizing="border-box"
+                            display="inline-flex"
+                            flexDirection="column"
+                            flexWrap="wrap"
+                            height="416px"
+                            justifyContent={"normal"}
+                            marginTop={"-16px"}
+                            width="100%"
+                        >
+                            <Box
+                                alignItems={"normal"}
+                                boxSizing={"border-box"}
+                                display="flex"
+                                flexBasis={"auto"}
+                                flexGrow={0}
+                                flexShrink={1}
+                                flexWrap={"wrap"}
+                                height={"40px"}
+                                justifyContent={"normal"}
+                                marginTop={"16px"}
+                                width={"100%"}
+                                textSizeAdjust={"100%"}
+                            >
+                                <Heading as="h2"
+                                    margin={0}
+                                    fontSize="32px"
+                                    fontWeight={"700"}
+                                    fontFamily="var(--font-netflix-core)"
+                                >
+                                    Mais motivos para assinar
+                                </Heading>
+                            </Box>
+                        </Box>
+
+                    </Box>
                 </Box>
             </Box>
         </Box>
