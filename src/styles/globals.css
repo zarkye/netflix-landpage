@@ -1,6 +1,10 @@
 html, body {
     margin: 0;
     padding: 0;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
     scroll-behavior: smooth;
     background: #000;
 }
@@ -11,6 +15,6 @@ html, body {
   }
   100% {
     opacity: 1;
-    transform: scale(1); /* Termina no tamanho normal */
+    transform: scale(1);
   }
 }

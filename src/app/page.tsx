@@ -17,6 +17,7 @@ import { LuChevronRight, LuChevronLeft } from "react-icons/lu";
 import Header from "@/components/Header/header";
 import NetflixCard from "@/components/CardRank/card";
 import SaibaMais from "@/components/CardSaibaMais/saibamais";
+import CardMaisMotivos from "@/components/CardMaisMotivos/cardmotivos";
 
 export default function Home() {
     const carouselRef = useRef<HTMLDivElement>(null);
@@ -34,88 +35,114 @@ export default function Home() {
                 "Após o envolvimento do filho em um complô nazista, o gângster Tommy Shelby precisa deixar o exílio e voltar a Birmingham para salvar a família e a nação.",
             cardTitle:
                 "https://occ-0-5547-1123.1.nflxso.net/dnm/api/v6/S4oi7EPZbv2UEPaukW54OORa0S8/AAAABVLapkJ883m7BlO1e25wiKkQ1Qv4zTGS8FtlJosRs-vb0SwbRwIeSgP-oit1oW2l21j2izCWviqtl-2nDSAE4alUUKr_Jlq3rA.webp?r=2af",
-            tags: ["2026", "A18", "Filme", "Dramas"]
+            tags: ["2026", "A18", "Filme", "Dramas"],
         },
         {
             numero: 2,
             img: "/assets/bts.jpg",
             titulo: "BTS",
-            sinopse: "O BTS faz um retorno grandioso para celebrar o novo álbum com uma performance ao vivo. Direto da histórica praça Gwanghwamun, em Seul. (Ao vivo em coreano.)",
-            imgBanner: "https://occ-0-5547-1123.1.nflxso.net/dnm/api/v6/6AYY37jfdO6hpXcMjf9Yu5cnmO0/AAAABcMbZ130D-ROcTxYn74Pe8al5_DSpy5Gte4nd13I6lBdXsdcC-5PLO9KKRrNYs0MOZAgVHI0utoz-2OZ5zArkNwyR-QRrYc3nDJk.webp?r=6ca",
-            cardTitle: "https://occ-0-5547-1123.1.nflxso.net/dnm/api/v6/S4oi7EPZbv2UEPaukW54OORa0S8/AAAABSBKuAxJU-_lDr-9Xb2jbfSzX6GfOE6gFDUlLJRpdRSR4MJtrNUHTmv_KT64Iy8VX0Cp2tvtkKsOgTm25zJVI5PjK-Y9GcVA_Q.webp?r=93c",
-            tags: ["2026", "A10", "Série", "Música"]
+            sinopse:
+                "O BTS faz um retorno grandioso para celebrar o novo álbum com uma performance ao vivo. Direto da histórica praça Gwanghwamun, em Seul. (Ao vivo em coreano.)",
+            imgBanner:
+                "https://occ-0-5547-1123.1.nflxso.net/dnm/api/v6/6AYY37jfdO6hpXcMjf9Yu5cnmO0/AAAABcMbZ130D-ROcTxYn74Pe8al5_DSpy5Gte4nd13I6lBdXsdcC-5PLO9KKRrNYs0MOZAgVHI0utoz-2OZ5zArkNwyR-QRrYc3nDJk.webp?r=6ca",
+            cardTitle:
+                "https://occ-0-5547-1123.1.nflxso.net/dnm/api/v6/S4oi7EPZbv2UEPaukW54OORa0S8/AAAABSBKuAxJU-_lDr-9Xb2jbfSzX6GfOE6gFDUlLJRpdRSR4MJtrNUHTmv_KT64Iy8VX0Cp2tvtkKsOgTm25zJVI5PjK-Y9GcVA_Q.webp?r=93c",
+            tags: ["2026", "A10", "Série", "Música"],
         },
         {
             numero: 3,
             img: "/assets/one-piece.jpg",
             titulo: "One Piece",
             imgBanner: "/assets/one-piece-banner.jpg",
-            sinopse: "O jovem pirata Monkey D. Luffy veste o chapéu de palha e, com sua tripulação atrapalhada, zarpa em uma jornada épica nesta adaptação em live-action do popular mangá.",
-            cardTitle: "https://occ-0-5547-1123.1.nflxso.net/dnm/api/v6/S4oi7EPZbv2UEPaukW54OORa0S8/AAAABQzPDXkx_1QVU3ASHuwDuQa5S-0oVfSfqCcIHjaPVEtAAa1AbhzSKHwJrRpxSp6P3VSxfHkyZx_DJJA1a5hqCE-qfxiUQuFVVw.webp?r=8da",
-            tags: ["2026", "16", "Série", "Ação", "Fantasia", "Aventura"]
+            sinopse:
+                "O jovem pirata Monkey D. Luffy veste o chapéu de palha e, com sua tripulação atrapalhada, zarpa em uma jornada épica nesta adaptação em live-action do popular mangá.",
+            cardTitle:
+                "https://occ-0-5547-1123.1.nflxso.net/dnm/api/v6/S4oi7EPZbv2UEPaukW54OORa0S8/AAAABQzPDXkx_1QVU3ASHuwDuQa5S-0oVfSfqCcIHjaPVEtAAa1AbhzSKHwJrRpxSp6P3VSxfHkyZx_DJJA1a5hqCE-qfxiUQuFVVw.webp?r=8da",
+            tags: ["2026", "16", "Série", "Ação", "Fantasia", "Aventura"],
         },
         {
             numero: 4,
             img: "/assets/bridgerton.jpg",
             titulo: "Bridgerton",
-            sinopse: "Em um novo capítulo da alta sociedade britânica, o solteirão convicto Benedict Bridgerton finalmente encontra o amor: uma criada encantadora em um baile de máscaras.",
-            imgBanner: "https://occ-0-5547-1123.1.nflxso.net/dnm/api/v6/6AYY37jfdO6hpXcMjf9Yu5cnmO0/AAAABSJJYApE5XnftG11IjDspV3_t7VzmnuDJk3UrBAXO6Tbzc2Lmi6FNaKV9VWjX5s7BbCSdGM92lWon3BPpvfnr7DiwtmJMzDWXfll.webp?r=986",
-            cardTitle: "https://occ-0-5547-1123.1.nflxso.net/dnm/api/v6/S4oi7EPZbv2UEPaukW54OORa0S8/AAAABQDwgNRA7wQxYT2nHOmQAcLj_F8hUSTPPuPipfFUlF_Imu1bgf8o93TuduY-6k4S020TIbF5XbMZ0_FhgGnc9IhtK0u34tSkyQ.webp?r=1b2",
-            tags: ["2026", "16", "Série", "Romance", "Dramas"]
+            sinopse:
+                "Em um novo capítulo da alta sociedade britânica, o solteirão convicto Benedict Bridgerton finalmente encontra o amor: uma criada encantadora em um baile de máscaras.",
+            imgBanner:
+                "https://occ-0-5547-1123.1.nflxso.net/dnm/api/v6/6AYY37jfdO6hpXcMjf9Yu5cnmO0/AAAABSJJYApE5XnftG11IjDspV3_t7VzmnuDJk3UrBAXO6Tbzc2Lmi6FNaKV9VWjX5s7BbCSdGM92lWon3BPpvfnr7DiwtmJMzDWXfll.webp?r=986",
+            cardTitle:
+                "https://occ-0-5547-1123.1.nflxso.net/dnm/api/v6/S4oi7EPZbv2UEPaukW54OORa0S8/AAAABQDwgNRA7wQxYT2nHOmQAcLj_F8hUSTPPuPipfFUlF_Imu1bgf8o93TuduY-6k4S020TIbF5XbMZ0_FhgGnc9IhtK0u34tSkyQ.webp?r=1b2",
+            tags: ["2026", "16", "Série", "Romance", "Dramas"],
         },
         {
             numero: 5,
             img: "/assets/maquina.jpg",
             titulo: "Máquina de Guerra",
-            sinopse: "Em sua última missão de treinamento, um engenheiro de combate precisa liderar sua equipe de elite em uma luta pela sobrevivência contra uma máquina mortal.",
-            imgBanner: "https://occ-0-5547-1123.1.nflxso.net/dnm/api/v6/6AYY37jfdO6hpXcMjf9Yu5cnmO0/AAAABVOvU1ktrDd1PnKdMc4yapTA5FWLOM8vVJKsyCQrvZoJNNrgjSiue1KuN4LQQE5m-jXYxXBPPmSHQrJS9EZPYHIfGkjeyRkS6148.webp?r=e8c",
-            cardTitle: "https://occ-0-5547-1123.1.nflxso.net/dnm/api/v6/S4oi7EPZbv2UEPaukW54OORa0S8/AAAABUc1EA02hlbXwaBpfznjx6Xhv5GheeI6PmRRIyWdocTqQIIfLOGzOvo_vGKFRrAwPC7T480lTH4z0BDLw49L6Ej_Y46J9S2tnA.webp?r=bd1",
-            tags: ["2026", "A16", "Filme", "Ação", "Ficção Científica"]
+            sinopse:
+                "Em sua última missão de treinamento, um engenheiro de combate precisa liderar sua equipe de elite em uma luta pela sobrevivência contra uma máquina mortal.",
+            imgBanner:
+                "https://occ-0-5547-1123.1.nflxso.net/dnm/api/v6/6AYY37jfdO6hpXcMjf9Yu5cnmO0/AAAABVOvU1ktrDd1PnKdMc4yapTA5FWLOM8vVJKsyCQrvZoJNNrgjSiue1KuN4LQQE5m-jXYxXBPPmSHQrJS9EZPYHIfGkjeyRkS6148.webp?r=e8c",
+            cardTitle:
+                "https://occ-0-5547-1123.1.nflxso.net/dnm/api/v6/S4oi7EPZbv2UEPaukW54OORa0S8/AAAABUc1EA02hlbXwaBpfznjx6Xhv5GheeI6PmRRIyWdocTqQIIfLOGzOvo_vGKFRrAwPC7T480lTH4z0BDLw49L6Ej_Y46J9S2tnA.webp?r=bd1",
+            tags: ["2026", "A16", "Filme", "Ação", "Ficção Científica"],
         },
         {
             numero: 6,
             img: "/assets/vampire-diaries.jpg",
             titulo: "Vampire Diaries",
-            sinopse: "Presos em corpos adolescentes, os irmãos vampiros rivais Stefan e Damon lutam pelo amor da cativante Elena.",
-            imgBanner: "https://occ-0-5547-1123.1.nflxso.net/dnm/api/v6/6AYY37jfdO6hpXcMjf9Yu5cnmO0/AAAABbOuFdty56hlNBMkvjrlV9eXtaF0kkWLnoflGxa0HbG9mDv5kp7pUcbgyONGAW5AJaPDiuFpON2s6IQ0vkSvvRyROh_5h7f28vwW.webp?r=e1f",
-            cardTitle: "https://occ-0-5547-1123.1.nflxso.net/dnm/api/v6/S4oi7EPZbv2UEPaukW54OORa0S8/AAAABQeYzYjWv2ELJlNcyCwaVPLMEG82C2iHPBcfIjSSEvgnur1wOC-CWFbG3f8E5JUPW2abMOgS7r7wZjjucoAFCV4vEqGhpxEHPQ.webp?r=9f8",
-            tags: ["2016", "16", "Série", "Fantasia", "Dramas"]
+            sinopse:
+                "Presos em corpos adolescentes, os irmãos vampiros rivais Stefan e Damon lutam pelo amor da cativante Elena.",
+            imgBanner:
+                "https://occ-0-5547-1123.1.nflxso.net/dnm/api/v6/6AYY37jfdO6hpXcMjf9Yu5cnmO0/AAAABbOuFdty56hlNBMkvjrlV9eXtaF0kkWLnoflGxa0HbG9mDv5kp7pUcbgyONGAW5AJaPDiuFpON2s6IQ0vkSvvRyROh_5h7f28vwW.webp?r=e1f",
+            cardTitle:
+                "https://occ-0-5547-1123.1.nflxso.net/dnm/api/v6/S4oi7EPZbv2UEPaukW54OORa0S8/AAAABQeYzYjWv2ELJlNcyCwaVPLMEG82C2iHPBcfIjSSEvgnur1wOC-CWFbG3f8E5JUPW2abMOgS7r7wZjjucoAFCV4vEqGhpxEHPQ.webp?r=9f8",
+            tags: ["2016", "16", "Série", "Fantasia", "Dramas"],
         },
         {
             numero: 7,
             img: "/assets/agente-secreto.jpg",
             titulo: "Agente Secreto",
-            sinopse: "Perseguido por um inimigo poderoso, um homem que esconde um segredo desaparece na multidão durante a ditadura militar no país.",
-            imgBanner: "https://occ-0-5547-1123.1.nflxso.net/dnm/api/v6/6AYY37jfdO6hpXcMjf9Yu5cnmO0/AAAABdsdjIVgG4c9MMbn15NyPfUFs5zeV84ew2sABZklt7NF1zZ9iI5jAewadey7OFZ1g4Sm7iLRU-gAKFSjepvJ0UDdiQSG1UGkH5yh.webp?r=e56",
-            cardTitle: "https://occ-0-5547-1123.1.nflxso.net/dnm/api/v6/S4oi7EPZbv2UEPaukW54OORa0S8/AAAABQVuY4ZDjNBXQs1lPxCtYrc0U7CXcUoDzaY0X3Y7blhe3Y8UVF4gPocY3ZekctAe0xMoAPjI1XYbRnmSXD_AgX3Ka1CfuAYpug.webp?r=3cf",
-            tags: ["2026", "16", "Filme", "Suspenses", "Dramas"]
+            sinopse:
+                "Perseguido por um inimigo poderoso, um homem que esconde um segredo desaparece na multidão durante a ditadura militar no país.",
+            imgBanner:
+                "https://occ-0-5547-1123.1.nflxso.net/dnm/api/v6/6AYY37jfdO6hpXcMjf9Yu5cnmO0/AAAABdsdjIVgG4c9MMbn15NyPfUFs5zeV84ew2sABZklt7NF1zZ9iI5jAewadey7OFZ1g4Sm7iLRU-gAKFSjepvJ0UDdiQSG1UGkH5yh.webp?r=e56",
+            cardTitle:
+                "https://occ-0-5547-1123.1.nflxso.net/dnm/api/v6/S4oi7EPZbv2UEPaukW54OORa0S8/AAAABQVuY4ZDjNBXQs1lPxCtYrc0U7CXcUoDzaY0X3Y7blhe3Y8UVF4gPocY3ZekctAe0xMoAPjI1XYbRnmSXD_AgX3Ka1CfuAYpug.webp?r=3cf",
+            tags: ["2026", "16", "Filme", "Suspenses", "Dramas"],
         },
         {
             numero: 8,
             img: "/assets/teen-wolf.jpg",
             titulo: "Teen Wolf",
-            sinopse: "Mordido por um animal, um adolescente vira um lobisomem com habilidades sobrenaturais que o tornam um atleta famoso – e complicam a vida dele.",
-            imgBanner: "https://occ-0-5547-1123.1.nflxso.net/dnm/api/v6/6AYY37jfdO6hpXcMjf9Yu5cnmO0/AAAABU0JBfPS2LckX9ZOK4Bb-N4FAsvyjdCJx44PjYOLBJYRswQyomtrKWyyDf2r5VuqiDlGGLg3ONIyPoF4X_zaCO7UysZNA4yWmV27.webp?r=a8c",
-            cardTitle: "https://occ-0-5547-1123.1.nflxso.net/dnm/api/v6/S4oi7EPZbv2UEPaukW54OORa0S8/AAAABXKEF7bF7nIfDLADp_2_jNd-GX56O3BMg-zCTzID24L47y7kf2q45SR_bHySLVg2-K9sTa1iFVYYtooFj7w6EHiUoO5KPvnzf08.webp?r=d75",
-            tags: ["2016", "16", "Série", "Terror", "Ação", "Dramas"]
+            sinopse:
+                "Mordido por um animal, um adolescente vira um lobisomem com habilidades sobrenaturais que o tornam um atleta famoso – e complicam a vida dele.",
+            imgBanner:
+                "https://occ-0-5547-1123.1.nflxso.net/dnm/api/v6/6AYY37jfdO6hpXcMjf9Yu5cnmO0/AAAABU0JBfPS2LckX9ZOK4Bb-N4FAsvyjdCJx44PjYOLBJYRswQyomtrKWyyDf2r5VuqiDlGGLg3ONIyPoF4X_zaCO7UysZNA4yWmV27.webp?r=a8c",
+            cardTitle:
+                "https://occ-0-5547-1123.1.nflxso.net/dnm/api/v6/S4oi7EPZbv2UEPaukW54OORa0S8/AAAABXKEF7bF7nIfDLADp_2_jNd-GX56O3BMg-zCTzID24L47y7kf2q45SR_bHySLVg2-K9sTa1iFVYYtooFj7w6EHiUoO5KPvnzf08.webp?r=d75",
+            tags: ["2016", "16", "Série", "Terror", "Ação", "Dramas"],
         },
         {
             numero: 9,
             img: "/assets/emergencia-radioativa.jpg",
             titulo: "Emergência Radioativa",
-            sinopse: "Inspirada em eventos reais, esta série acompanha físicos e médicos em uma corrida contra o tempo para conter um desastre radiológico e salvar milhares de vidas.",
-            imgBanner: "https://occ-0-5547-1123.1.nflxso.net/dnm/api/v6/6AYY37jfdO6hpXcMjf9Yu5cnmO0/AAAABa3fQDQ-tre29DHwQrwh7AGpIXVQV6HmtYoXffTgtoPu1FONxBpbWo9joZCa9C-5OhaTff4m_jMwRogGzNkgz6WY6Pum3xyxpj5H.webp?r=3aa",
-            cardTitle: "https://occ-0-5547-1123.1.nflxso.net/dnm/api/v6/S4oi7EPZbv2UEPaukW54OORa0S8/AAAABRYAs0qiYb7RpS-tqzbOIILl_kPT_KsQC9OlZNorHfrTCSbjHY-sVccCqxebBn1vXQ219StnhEWVse2FMw4rLWFHlRSK_7w4vA.webp?r=1e1",
-            tags: ["2026", "A12", "Série", "Suspenses", "Dramas"]
+            sinopse:
+                "Inspirada em eventos reais, esta série acompanha físicos e médicos em uma corrida contra o tempo para conter um desastre radiológico e salvar milhares de vidas.",
+            imgBanner:
+                "https://occ-0-5547-1123.1.nflxso.net/dnm/api/v6/6AYY37jfdO6hpXcMjf9Yu5cnmO0/AAAABa3fQDQ-tre29DHwQrwh7AGpIXVQV6HmtYoXffTgtoPu1FONxBpbWo9joZCa9C-5OhaTff4m_jMwRogGzNkgz6WY6Pum3xyxpj5H.webp?r=3aa",
+            cardTitle:
+                "https://occ-0-5547-1123.1.nflxso.net/dnm/api/v6/S4oi7EPZbv2UEPaukW54OORa0S8/AAAABRYAs0qiYb7RpS-tqzbOIILl_kPT_KsQC9OlZNorHfrTCSbjHY-sVccCqxebBn1vXQ219StnhEWVse2FMw4rLWFHlRSK_7w4vA.webp?r=1e1",
+            tags: ["2026", "A12", "Série", "Suspenses", "Dramas"],
         },
         {
             numero: 10,
             img: "/assets/salve-rosa.jpg",
             titulo: "#SALVEROSA",
-            sinopse: "Depois de um incidente na escola, uma influencer adolescente começa a questionar sua identidade online e descobre segredos que colocam sua vida em risco.",
-            imgBanner: "https://occ-0-5547-1123.1.nflxso.net/dnm/api/v6/6AYY37jfdO6hpXcMjf9Yu5cnmO0/AAAABUmbR-ZjnZ-YnkaypDP6Z2mmb_xhPDQB4ywrIOpkaXOhvY_Fn_MV9Aqhh-vPk1vYNaKiL9f-MeT28DoHuUHAU9RDsGsyzTtB2GaW.webp?r=a27",
-            cardTitle: "https://occ-0-5547-1123.1.nflxso.net/dnm/api/v6/S4oi7EPZbv2UEPaukW54OORa0S8/AAAABcLWT0Dfq1A4sGAmbFfsXGOQEjWX4YOcwCItsdJsawsKxTdputp8aF5A-Z7RvfrQ7tvkdCD5MBGctMRuj9twI_K4PYze2MgHfg.webp?r=148",
-            tags: ["2025", "16", "Filme", "Suspenses", "Dramas"]
+            sinopse:
+                "Depois de um incidente na escola, uma influencer adolescente começa a questionar sua identidade online e descobre segredos que colocam sua vida em risco.",
+            imgBanner:
+                "https://occ-0-5547-1123.1.nflxso.net/dnm/api/v6/6AYY37jfdO6hpXcMjf9Yu5cnmO0/AAAABUmbR-ZjnZ-YnkaypDP6Z2mmb_xhPDQB4ywrIOpkaXOhvY_Fn_MV9Aqhh-vPk1vYNaKiL9f-MeT28DoHuUHAU9RDsGsyzTtB2GaW.webp?r=a27",
+            cardTitle:
+                "https://occ-0-5547-1123.1.nflxso.net/dnm/api/v6/S4oi7EPZbv2UEPaukW54OORa0S8/AAAABcLWT0Dfq1A4sGAmbFfsXGOQEjWX4YOcwCItsdJsawsKxTdputp8aF5A-Z7RvfrQ7tvkdCD5MBGctMRuj9twI_K4PYze2MgHfg.webp?r=148",
+            tags: ["2025", "16", "Filme", "Suspenses", "Dramas"],
         },
     ];
 
@@ -354,14 +381,14 @@ export default function Home() {
                         pl="8px"
                         color="gray.300"
                         opacity={showLeftBtn ? 1 : 0}
-                        pointerEvents={showLeftBtn ? "auto" : "none"} // Impede cliques quando invisível
+                        pointerEvents={showLeftBtn ? "auto" : "none"}
                         transform={
                             showLeftBtn ? "translateX(0)" : "translateX(-100%)"
                         }
                         transition={
                             showLeftBtn
-                                ? "transform 0.2s ease-out, opacity 0.1s ease-out" // Quando APARECE (mais lento)
-                                : "transform 0.3s ease-in, opacity 0.3s ease-in" // Quando SOME (mais rápido)
+                                ? "transform 0.2s ease-out, opacity 0.1s ease-out"
+                                : "transform 0.3s ease-in, opacity 0.3s ease-in"
                         }
                     >
                         <Flex
@@ -500,6 +527,46 @@ export default function Home() {
                                 >
                                     Mais motivos para assinar
                                 </Heading>
+                            </Box>
+                            <Box
+                                boxSizing="border-box"
+                                display={"inherit"}
+                                height={"344px"}
+                                width={"100%"}
+                            >
+                                <Box
+                                    display="flex"
+                                    flexDirection="row"
+                                    gap="16px" // A mágica acontece aqui! Cria o espaço de 16px ENTRE os cards
+                                    marginTop="12px"
+                                    width="100%" // Deixa o contêiner usar o espaço real da tela, sem forçar 1213px
+                                    height="356px"
+                                >
+                                    <CardMaisMotivos
+                                        title="Aproveite na TV"
+                                        subtitle="Assista em Smart TVs, PlayStation, Xbox, Chromecast, Apple TV, aparelhos de Blu-ray e outros dispositivos."
+                                        img="/assets/tv.svg"
+                                        alt="Icone de TV"
+                                    />
+                                    <CardMaisMotivos
+                                        title="Baixe séries para assistir offline"
+                                        subtitle="Salve seus títulos favoritos e sempre tenha algo para assistir."
+                                        img="/assets/download.svg"
+                                        alt="Icone de download"
+                                    />
+                                    <CardMaisMotivos
+                                        title="Assista onde quiser"
+                                        subtitle="Assista a quantos filmes e séries quiser no celular, tablet, laptop e TV."
+                                        img="/assets/luneta.svg"
+                                        alt="Icone de luneta"
+                                    />
+                                    <CardMaisMotivos
+                                        title="Crie perfis para crianças"
+                                        subtitle="Deixe as crianças se aventurarem com seus personagens favoritos em um espaço feito só para elas, sem pagar a mais por isso."
+                                        img="/assets/perfis.svg"
+                                        alt="Icone de perfis"
+                                    />
+                                </Box>
                             </Box>
                         </Box>
                     </Box>
