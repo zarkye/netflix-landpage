@@ -4,3 +4,13 @@ html, body {
     scroll-behavior: smooth;
     background: #000;
 }
+@keyframes netflixPop {
+  0% {
+    opacity: 0;
+    transform: scale(0.9); 
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1); /* Termina no tamanho normal */
+  }
+}

@@ -27,7 +27,8 @@ export default function Header(props: StackProps) {
         <HStack
             as="header"
             zIndex={50}
-            px={{ base: "32px", md: "148px", lg: "338px" }}
+            paddingLeft={"354px"}
+            paddingRight={"340px"}
             py={0}
             w="100vw"
             h={120}
