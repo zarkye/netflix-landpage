@@ -2,7 +2,7 @@ import { Box, Button, Text } from "@chakra-ui/react";
 import NextImage from "next/image";
 export default function SaibaMais() {
     return (
-        <Box w="100%" paddingTop={0} marginBottom="64px" height="77px">
+        <Box w="100%" paddingTop={0} marginBottom="64px" marginTop={-1} height="77px">
             <Box
                 boxSizing="border-box"
                 display="block"
@@ -19,6 +19,7 @@ export default function SaibaMais() {
                     <Box
                         position="absolute"
                         top="-9px"
+                        left={2}
                         zIndex={2}
                         display="block"
                         width="96px"

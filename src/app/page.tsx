@@ -18,6 +18,8 @@ import Header from "@/components/Header/header";
 import NetflixCard from "@/components/CardRank/card";
 import SaibaMais from "@/components/CardSaibaMais/saibamais";
 import CardMaisMotivos from "@/components/CardMaisMotivos/cardmotivos";
+import FaqItem from "@/components/FaqItem/faqitem";
+import EmailInput from "@/components/EmailInput/emailinput";
 
 export default function Home() {
     const carouselRef = useRef<HTMLDivElement>(null);
@@ -203,11 +205,11 @@ export default function Home() {
 
                     <Box
                         position="absolute"
-                        bottom={0}
+                        bottom={-1}
                         left="50%"
                         w="115%"
                         transform="translateX(-50%)"
-                        h="85px"
+                        h="78px"
                         zIndex={3}
                         borderTopLeftRadius="50% 100%"
                         borderTopRightRadius="50% 100%"
@@ -222,7 +224,16 @@ export default function Home() {
                             right: 0,
                             height: "100%",
                             padding: "4px",
-                            background: `linear-gradient(to right, rgba(33,13,22,1) 0%, rgba(184,40,105,1) 15%, rgba(229,9,20,1) 50%, rgba(184,40,105,1) 85%, rgba(33,13,22,1) 100%)`,
+                            background: `linear-gradient(
+                                to right, 
+                                transparent 0%, 
+                                rgba(33,13,22,0.8) 6%, 
+                                rgba(184,40,105,1) 40%, 
+                                rgba(229,9,20,1) 50%, 
+                                rgba(184,40,105,1) 70%, 
+                                rgba(33,13,22,1) 90%, 
+                                transparent 100%
+                                )`,
                             borderTopLeftRadius: "50% 100%",
                             borderTopRightRadius: "50% 100%",
                             clipPath: "inset(0 0 30% 0)",
@@ -260,7 +271,7 @@ export default function Home() {
                     </Heading>
                     <Text
                         fontSize={{ base: "18px", lg: "20px" }}
-                        fontWeight="700"
+                        fontWeight="500"
                         marginBottom="24px"
                         fontFamily="var(--font-netflix-core)"
                     >
@@ -274,68 +285,7 @@ export default function Home() {
                         Quer assistir? Informe seu email para criar ou reiniciar
                         sua assinatura.
                     </Text>
-                    <Flex
-                        mt="8px"
-                        w="full"
-                        maxW="665px"
-                        flexDir={{ base: "column", md: "row" }}
-                        gap="10px"
-                        align="center"
-                    >
-                        <Box position="relative" w="100%">
-                            <Input
-                                placeholder=" "
-                                className="peer"
-                                fontWeight="600"
-                                color="rgba(255, 255, 255, 0.8)"
-                                type="email"
-                                fontSize="md"
-                                h="56px"
-                                border="1px solid rgba(255, 255, 255, 0.3)"
-                                bg="rgba(24, 23, 21, 0.6)"
-                                boxShadow="0 0 30px rgba(109, 99, 95, 0.1)"
-                                paddingX="16px"
-                                paddingTop="24px"
-                                paddingBottom="8px"
-                                _focus={{
-                                    outline: "2px solid white",
-                                    outlineOffset: "2px",
-                                }}
-                            />
-                            <Text
-                                position="absolute"
-                                fontFamily="var(--font-netflix-core)"
-                                left="16px"
-                                top="50%"
-                                transform="translateY(-50%)"
-                                fontSize="md"
-                                color="rgba(255,255,255,0.7)"
-                                pointerEvents="none"
-                                _peerFocus={{ top: "16px", fontSize: "12px" }}
-                                _before={{
-                                    ".peer:not(:placeholder-shown) + &": {
-                                        top: "16px",
-                                        fontSize: "12px",
-                                    },
-                                }}
-                            >
-                                Email
-                            </Text>
-                        </Box>
-                        <Button
-                            color="#fff"
-                            bgColor="red"
-                            h="56px"
-                            px="30px"
-                            w={{ base: "full", md: "185px" }}
-                            fontSize="24px"
-                            fontWeight="700"
-                            fontFamily="sans-serif"
-                        >
-                            Vamos lá
-                            <Icon as={LuChevronRight} boxSize={8} />
-                        </Button>
-                    </Flex>
+                    <EmailInput width="664px"/>
                 </VStack>
             </Box>
 
@@ -537,9 +487,9 @@ export default function Home() {
                                 <Box
                                     display="flex"
                                     flexDirection="row"
-                                    gap="16px" // A mágica acontece aqui! Cria o espaço de 16px ENTRE os cards
+                                    gap="16px"
                                     marginTop="12px"
-                                    width="100%" // Deixa o contêiner usar o espaço real da tela, sem forçar 1213px
+                                    width="100%"
                                     height="356px"
                                 >
                                     <CardMaisMotivos
@@ -565,6 +515,116 @@ export default function Home() {
                                         subtitle="Deixe as crianças se aventurarem com seus personagens favoritos em um espaço feito só para elas, sem pagar a mais por isso."
                                         img="/assets/perfis.svg"
                                         alt="Icone de perfis"
+                                    />
+                                </Box>
+                            </Box>
+                        </Box>
+                    </Box>
+                </Box>
+                <Box
+                    boxSizing={"border-box"}
+                    display={"block"}
+                    marginBottom={"64px"}
+                    width={"1197px"}
+                >
+                    <Box
+                        boxSizing={"border-box"}
+                        display="block"
+                        height={"608px"}
+                        width={"100%"}
+                    >
+                        <Box
+                            alignItems={"normal"}
+                            boxSizing={"border-box"}
+                            display="inline-flex"
+                            flexDirection={"column"}
+                            flexWrap={"wrap"}
+                            height={"auto"}
+                            justifyContent={"normal"}
+                            marginLeft={0}
+                            marginTop={"-16px"}
+                            maxWidth={"none"}
+                            padding={0}
+                            width={"100%"}
+                        >
+                            <Box
+                                alignItems={"normal"}
+                                boxSizing={"border-box"}
+                                display="flex"
+                                flexBasis={"auto"}
+                                flexGrow={0}
+                                flexShrink={1}
+                                flexWrap={"wrap"}
+                                justifyContent={"normal"}
+                                marginTop={"16px"}
+                                marginLeft={0}
+                                padding={0}
+                                width={"327.531px"}
+                            >
+                                <Heading
+                                    as="h2"
+                                    boxSizing={"border-box"}
+                                    display="block"
+                                    margin={0}
+                                    padding={0}
+                                    fontFamily={"var(--font-netflix-core)"}
+                                    fontSize={"32px"}
+                                    fontWeight={"700"}
+                                    textSizeAdjust={"100%"}
+                                >
+                                    Perguntas frequentes
+                                </Heading>
+                            </Box>
+                            <Box
+                                alignItems={"normal"}
+                                boxSizing={"border-box"}
+                                display={"flex"}
+                                flexBasis={"auto"}
+                                flexGrow={0}
+                                flexShrink={1}
+                                flexWrap={"wrap"}
+                                justifyContent={"normal"}
+                                marginTop={"16px"}
+                                marginLeft={0}
+                                padding={0}
+                                width={"100%"}
+                            >
+                                <Box
+                                    as="ul"
+                                    boxSizing={"border-box"}
+                                    display="block"
+                                    margin={0}
+                                    padding={0}
+                                    listStylePosition={"outside"}
+                                    listStyleType={"none"}
+                                    width={"100%"}
+                                >
+                                    <FaqItem
+                                        question="O que é a Netflix?"
+                                        information="A Netflix é um serviço de streaming que oferece uma ampla variedade de séries, filmes e documentários premiados em milhares de aparelhos conectados à internet."
+                                        information2="Você pode assistir a quantos filmes e séries quiser, quando e onde quiser – tudo por um preço mensal acessível. Aqui você sempre encontra novidades. A cada semana, adicionamos novas séries e filmes."
+                                    />
+                                    <FaqItem
+                                        question="Quanto Custa a Netflix?"
+                                        information="Assista à Netflix no seu celular, tablet, Smart TV, notebook ou aparelho de streaming por uma taxa mensal única. Os planos variam de R$ 20,90 a R$ 59,90 por mês."
+                                    />
+                                    <FaqItem
+                                        question="Onde posso assistir?"
+                                        information="Assista onde quiser, quando quiser. Acesse sua conta Netflix em netflix.com para assistir no computador ou em qualquer aparelho conectado à internet compatível com o aplicativo Netflix, como Smart TVs, smartphones, tablets, aparelhos de streaming e videogames."
+                                        information2="Você também pode baixar suas séries favoritas com o aplicativo Netflix para iOS ou Android. Use os downloads para levar a Netflix para onde quiser sem precisar de conexão com a internet. Leve a Netflix com você para qualquer lugar."
+                                    />
+                                    <FaqItem
+                                        question="Como faço para cancelar"
+                                        information="A Netflix é flexível. Você pode cancelar a sua conta online com apenas dois cliques. Não há taxa de cancelamento. Você inicia e encerra sua assinatura quando quiser."
+                                    />
+                                    <FaqItem
+                                        question="Onde eu posso assistir na Netflix"
+                                        information="A Netflix tem um grande catálogo de filmes, documentários, séries, originais Netflix premiados e muito mais. Assista o quanto quiser, quando quiser."
+                                    />
+                                    <FaqItem
+                                        question="A Netflix é adequada para crianças?"
+                                        information="A experiência infantil da Netflix faz parte da sua assinatura para que as crianças se divirtam em seu próprio espaço com séries e filmes familiares sob a supervisão dos responsáveis."
+                                        information2="O recurso de controle parental, incluso nos perfis para crianças e protegido por PIN, permite restringir a classificação etária do conteúdo que as crianças podem ver e bloquear títulos específicos que você não quer que elas assistam."
                                     />
                                 </Box>
                             </Box>
