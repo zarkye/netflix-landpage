@@ -3,7 +3,7 @@ import { useState } from "react";
 import { LuChevronRight } from "react-icons/lu";
 import NextImage from 'next/image'
 import VamosButtonNormal from "../VamosButtonNormal/vamosbutton";
-import VamosButton from "../VamosButtonModal/vamosbutton";
+import VamosButton from "../VamosButtonLoad/vamosbutton";
 
 interface EmailInputProps {
     width: string;

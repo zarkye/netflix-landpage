@@ -24,6 +24,7 @@ import FaqItem from "@/components/FaqItem/faqitem";
 import EmailInput from "@/components/EmailInput/emailinput";
 import FooterListItem from "@/components/FooterListItem/footerli";
 import LanguageSelector from "@/components/LanguageSelect/languageselect";
+import CookieBanner from "@/components/CookieBanner/cookiebanner";
 
 export default function Home() {
     const carouselRef = useRef<HTMLDivElement>(null);
@@ -919,18 +920,13 @@ export default function Home() {
                             <Box
                                 boxSizing={"border-box"}
                                 display={"flex"}
-                                flexDirection={
-                                    "column"
-                                }
+                                flexDirection={"column"}
                                 marginTop={"36px"}
                                 width={"100%"}
                                 fontFamily={"var(--font-netflix-core)"}
                                 color={"rgba(255, 255, 255, 0.7)"}
-                                textAlign={
-                                    "left"
-                                }
+                                textAlign={"left"}
                             >
-                            
                                 <Box
                                     as="p"
                                     boxSizing={"border-box"}
@@ -949,9 +945,7 @@ export default function Home() {
                                         transition={"opacity 0.3s ease"}
                                         onClick={() => setShowKnowMore(true)}
                                         color={"rgb(68, 142, 244)"}
-                                        textDecoration={
-                                            "none"
-                                        }
+                                        textDecoration={"none"}
                                         _hover={{
                                             cursor: "pointer",
                                             textDecoration: "underline",
@@ -965,7 +959,9 @@ export default function Home() {
                                     boxSizing={"border-box"}
                                     display={"flex"}
                                     opacity={showKnowMore ? 1 : 0}
-                                    visibility={showKnowMore ? "visible" : "hidden"}
+                                    visibility={
+                                        showKnowMore ? "visible" : "hidden"
+                                    }
                                     transition={"opacity 0.5s ease"}
                                     fontSize={"13px"}
                                     color="rgba(255, 255, 255, 0.5)"
@@ -981,8 +977,8 @@ export default function Home() {
                                             }}
                                         >
                                             Política de Privacidade
-                                        </a>
-                                        {" "}e{" "}
+                                        </a>{" "}
+                                        e{" "}
                                         <a
                                             href="https://policies.google.com/terms"
                                             style={{
@@ -1004,6 +1000,7 @@ export default function Home() {
                     </Box>
                 </Box>
             </Box>
+            <CookieBanner/>
         </Box>
     );
 }

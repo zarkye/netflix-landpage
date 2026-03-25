@@ -19,7 +19,7 @@ import {
 import NextImage from "next/image";
 import TagItem from "../TagItem/tagitem";
 import { useEffect, useState } from "react";
-import VamosButton from "../VamosButtonModal/vamosbutton";
+import VamosButtonLoad from "../VamosButtonLoad/vamosbutton";
 
 interface NetflixCardProps {
     numero: number;
@@ -42,13 +42,13 @@ export default function NetflixCard({
 }: NetflixCardProps) {
     const [isOpen, setIsOpen] = useState(false);
     const [showBg, setShowBg] = useState(false);
-
+    const url = "https://www.netflix.com/signup";
+    
     //use effect pra controlar a transição borrada da imagem de fundo do modal
     useEffect(() => {
         if (!isOpen) return;
 
         const timer = setTimeout(() => setShowBg(true), 350);
-
         return () => clearTimeout(timer);
     }, [isOpen]);
 
@@ -107,13 +107,16 @@ export default function NetflixCard({
                 </Box>
             </DialogTrigger>
 
-            <DialogBackdrop bg="blackAlpha.800" />
+            <DialogBackdrop bg="blackAlpha.800/90" />
 
             <DialogContent
                 bg="rgb(22, 22, 22)"
                 css={{
                     "&[data-state='open']": {
                         animation: "netflixPop 0.3s",
+                    },
+                    "&[data-state='closed']": {
+                         animation: "netflixPopOut 0.15s ease-in",
                     },
                 }}
                 color="white"
@@ -336,7 +339,7 @@ export default function NetflixCard({
                                 >
                                     {sinopse}
                                 </Box>
-                                <VamosButton />
+                                <VamosButtonLoad url={url} />
                             </Box>
                         </Box>
                     </Box>

@@ -1,8 +1,27 @@
-import { Box, Button, Text } from "@chakra-ui/react";
+import { Box, Button, Spinner, Text } from "@chakra-ui/react";
 import NextImage from "next/image";
+import { useState } from "react";
 export default function SaibaMais() {
+    const [buttonClick, setButtonClick] = useState(false);
+
+    const handleButtonClick = () => {
+        if (buttonClick) return;
+
+        setButtonClick(true);
+
+        setTimeout(() => {
+            window.location.href = "https://www.netflix.com/br/ads-plan";
+        }, 500);
+    };
+
     return (
-        <Box w="100%" paddingTop={0} marginBottom="64px" marginTop={-1} height="77px">
+        <Box
+            w="100%"
+            paddingTop={0}
+            marginBottom="64px"
+            marginTop={-1}
+            height="77px"
+        >
             <Box
                 boxSizing="border-box"
                 display="block"
@@ -131,6 +150,7 @@ export default function SaibaMais() {
                                         alignItems="center"
                                         boxSizing="border-box"
                                         display="flex"
+                                        onClick={handleButtonClick}
                                         overflow="visible"
                                         margin={0}
                                         right={2}
@@ -142,6 +162,14 @@ export default function SaibaMais() {
                                         _hover={{
                                             bg: "rgba(128, 128, 128, 0.3)",
                                         }}
+                                        loading={buttonClick}
+                                        spinner={
+                                            <Spinner
+                                                size="md"
+                                                filter={"blur(0.5px)"}
+                                                color="rgba(255, 255, 255, 0.7)"
+                                            />
+                                        }
                                     >
                                         Saiba mais
                                     </Button>

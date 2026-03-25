@@ -1,4 +1,5 @@
 import type { NextConfig } from "next";
+import { hostname } from "os";
 
 const nextConfig: NextConfig = {
   images: {
@@ -9,7 +10,12 @@ const nextConfig: NextConfig = {
         port: '',
         pathname: '/**',
       },
-      // Se houver outros domínios da netflix, você precisará adicionar aqui também
+      {
+        protocol: 'https',
+        hostname: 'help.nflxext.com',
+        port: '',
+        pathname: '/**',
+      },
     ],
   },
 };
