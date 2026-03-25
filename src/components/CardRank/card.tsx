@@ -1,12 +1,6 @@
 import {
     Box,
     Text,
-    Button,
-    Badge,
-    Group,
-    Stack,
-    Image as ChakraImage,
-    HStack,
 } from "@chakra-ui/react";
 import {
     DialogBody,

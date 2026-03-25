@@ -3,12 +3,10 @@ import { useRef, useState, useEffect } from "react";
 import {
     HStack,
     Box,
-    Button,
     Text,
     VStack,
     Flex,
     Heading,
-    Input,
     Icon,
     Link as ChakraLink,
 } from "@chakra-ui/react";
@@ -180,13 +178,14 @@ export default function Home() {
 
     return (
         <Box
+            as="main"
             position="relative"
             w="100%"
             maxH="100%"
             bg="#000"
             overflowX="hidden"
         >
-            <Box position="relative" w="100%" h="100vh">
+            <Box as="section" position="relative" w="100%" h="100vh">
                 <Box position="absolute" inset={0} zIndex={0}>
                     <NextImage
                         src="/assets/netflix-background2.jpg"
@@ -232,15 +231,15 @@ export default function Home() {
                             height: "100%",
                             padding: "4px",
                             background: `linear-gradient(
-                                to right, 
-                                transparent 0%, 
-                                rgba(33,13,22,0.8) 6%, 
-                                rgba(184,40,105,1) 40%, 
-                                rgba(229,9,20,1) 50%, 
-                                rgba(184,40,105,1) 70%, 
-                                rgba(33,13,22,1) 90%, 
-                                transparent 100%
-                                )`,
+                            to right, 
+                            transparent 0%, 
+                            rgba(33,13,22,0.8) 6%, 
+                            rgba(184,40,105,1) 40%, 
+                            rgba(229,9,20,1) 50%, 
+                            rgba(184,40,105,1) 70%, 
+                            rgba(33,13,22,1) 90%, 
+                            transparent 100%
+                            )`,
                             borderTopLeftRadius: "50% 100%",
                             borderTopRightRadius: "50% 100%",
                             clipPath: "inset(0 0 30% 0)",
@@ -266,6 +265,7 @@ export default function Home() {
                     textAlign="center"
                 >
                     <Heading
+                        as="h1"
                         fontSize={{ base: "32px", md: "48px", lg: "64px" }}
                         fontFamily="var(--font-netflix-core)"
                         fontWeight={"black"}
@@ -297,6 +297,7 @@ export default function Home() {
             </Box>
 
             <Box
+                as="section"
                 bg="#000"
                 position="relative"
                 zIndex={50}
@@ -307,6 +308,7 @@ export default function Home() {
                 <SaibaMais />
 
                 <Text
+                    as="h2"
                     fontSize="32px"
                     fontWeight="bold"
                     color="white"
@@ -380,6 +382,7 @@ export default function Home() {
                     >
                         {cards.map((card) => (
                             <Box
+                                as="article"
                                 key={card.numero}
                                 flexShrink={0}
                                 minW="max-content"
@@ -529,6 +532,7 @@ export default function Home() {
                     </Box>
                 </Box>
                 <Box
+                    as="section"
                     boxSizing={"border-box"}
                     display={"block"}
                     marginBottom={"48px"}
@@ -639,6 +643,7 @@ export default function Home() {
                     </Box>
                 </Box>
                 <Box
+                    as="section"
                     boxSizing={"border-box"}
                     display={"block"}
                     marginBottom={"64px"}
@@ -1000,7 +1005,7 @@ export default function Home() {
                     </Box>
                 </Box>
             </Box>
-            <CookieBanner/>
+            <CookieBanner />
         </Box>
-    );
+    )
 }

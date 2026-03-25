@@ -1,9 +1,7 @@
-import { Box, Button, Flex, Icon, Input, Text } from "@chakra-ui/react";
+import { Box, Flex, Input, Text } from "@chakra-ui/react";
 import { useState } from "react";
-import { LuChevronRight } from "react-icons/lu";
 import NextImage from 'next/image'
 import VamosButtonNormal from "../VamosButtonNormal/vamosbutton";
-import VamosButton from "../VamosButtonLoad/vamosbutton";
 
 interface EmailInputProps {
     width: string;
