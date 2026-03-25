@@ -1,22 +1,23 @@
 "use client";
-import {
-    HStack,
-    Image as ChakraImage,
-    Box,
-    SelectItemGroup,
-    Select,
-    Portal,
-    createListCollection,
-    Button,
-    Flex,
-    StackProps,
-} from "@chakra-ui/react";
+import { HStack, Box, Button, StackProps } from "@chakra-ui/react";
 import NextImage from "next/image";
 
-import { LuLanguages } from "react-icons/lu";
 import LanguageSelector from "../LanguageSelect/languageselect";
+import { useState } from "react";
 
 export default function Header(props: StackProps) {
+    const [buttonClick, setButtonClick] = useState(false);
+
+    const handleButtonClick = () => {
+        if (buttonClick) return;
+
+        setButtonClick(true);
+
+        setTimeout(() => {
+            window.location.href = "https://www.netflix.com/login";
+        }, 500);
+    };
+
     return (
         <HStack
             as="header"
@@ -46,9 +47,10 @@ export default function Header(props: StackProps) {
                     />
                 </Box>
                 <HStack w="100%" justify={"flex-end"} gap={0}>
-                    <LanguageSelector/>
+                    <LanguageSelector />
                     <Button
                         ml="12px"
+                        onClick={handleButtonClick}
                         h="32px"
                         bgColor="rgb(229, 9, 20)"
                         color="white"

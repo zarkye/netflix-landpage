@@ -7,7 +7,6 @@ interface TagProps {
 export default function TagItem({ text }: TagProps) {
     return (
         <Box
-        as="li"
         display="inline-block"
         marginRight={"8px"}
         textSizeAdjust={"100%"}

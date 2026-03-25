@@ -19,7 +19,7 @@ import {
 import NextImage from "next/image";
 import TagItem from "../TagItem/tagitem";
 import { useEffect, useState } from "react";
-import VamosButton from "../VamosButton/vamosbutton";
+import VamosButton from "../VamosButtonModal/vamosbutton";
 
 interface NetflixCardProps {
     numero: number;

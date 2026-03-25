@@ -2,6 +2,8 @@ import { Box, Button, Flex, Icon, Input, Text } from "@chakra-ui/react";
 import { useState } from "react";
 import { LuChevronRight } from "react-icons/lu";
 import NextImage from 'next/image'
+import VamosButtonNormal from "../VamosButtonNormal/vamosbutton";
+import VamosButton from "../VamosButtonModal/vamosbutton";
 
 interface EmailInputProps {
     width: string;
@@ -13,6 +15,7 @@ export default function EmailInput({width, shadow}: EmailInputProps) {
     const [email, setEmail] = useState("");
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     const isEmailInvalid = email.length > 0 && !emailRegex.test(email);
+    const isButtonDisabled = email.length === 0 || isEmailInvalid;
 
     return (
         <Flex
@@ -116,19 +119,7 @@ export default function EmailInput({width, shadow}: EmailInputProps) {
                 )}
             </Box>
 
-            <Button
-                color="#fff"
-                bgColor="red"
-                h="56px"
-                px="30px"
-                w={{ base: "full", md: "185px" }}
-                fontSize="24px"
-                fontWeight="700"
-                fontFamily="sans-serif"
-            >
-                Vamos lá
-                <Icon as={LuChevronRight} boxSize={8} />
-            </Button>
+            <VamosButtonNormal disable={isButtonDisabled} />
         </Flex>
     );
 }
