@@ -10,8 +10,10 @@ import {
     Heading,
     Input,
     Icon,
+    Link as ChakraLink,
 } from "@chakra-ui/react";
 import NextImage from "next/image";
+import NextLink from "next/link";
 
 import { LuChevronRight, LuChevronLeft } from "react-icons/lu";
 import Header from "@/components/Header/header";
@@ -20,11 +22,15 @@ import SaibaMais from "@/components/CardSaibaMais/saibamais";
 import CardMaisMotivos from "@/components/CardMaisMotivos/cardmotivos";
 import FaqItem from "@/components/FaqItem/faqitem";
 import EmailInput from "@/components/EmailInput/emailinput";
+import FooterListItem from "@/components/FooterListItem/footerli";
+import LanguageSelector from "@/components/LanguageSelect/languageselect";
 
 export default function Home() {
     const carouselRef = useRef<HTMLDivElement>(null);
     const [showLeftBtn, setShowLeftBtn] = useState(false);
     const [showRightBtn, setShowRightBtn] = useState(true);
+
+    const [showKnowMore, setShowKnowMore] = useState(false);
 
     const cards = [
         {
@@ -285,7 +291,7 @@ export default function Home() {
                         Quer assistir? Informe seu email para criar ou reiniciar
                         sua assinatura.
                     </Text>
-                    <EmailInput width="664px"/>
+                    <EmailInput width="664px" shadow={true} />
                 </VStack>
             </Box>
 
@@ -524,13 +530,13 @@ export default function Home() {
                 <Box
                     boxSizing={"border-box"}
                     display={"block"}
-                    marginBottom={"64px"}
+                    marginBottom={"48px"}
                     width={"1197px"}
                 >
                     <Box
                         boxSizing={"border-box"}
                         display="block"
-                        height={"608px"}
+                        height={"auto"}
                         width={"100%"}
                     >
                         <Box
@@ -614,11 +620,11 @@ export default function Home() {
                                         information2="Você também pode baixar suas séries favoritas com o aplicativo Netflix para iOS ou Android. Use os downloads para levar a Netflix para onde quiser sem precisar de conexão com a internet. Leve a Netflix com você para qualquer lugar."
                                     />
                                     <FaqItem
-                                        question="Como faço para cancelar"
+                                        question="Como faço para cancelar?"
                                         information="A Netflix é flexível. Você pode cancelar a sua conta online com apenas dois cliques. Não há taxa de cancelamento. Você inicia e encerra sua assinatura quando quiser."
                                     />
                                     <FaqItem
-                                        question="Onde eu posso assistir na Netflix"
+                                        question="O que eu posso assistir na Netflix?"
                                         information="A Netflix tem um grande catálogo de filmes, documentários, séries, originais Netflix premiados e muito mais. Assista o quanto quiser, quando quiser."
                                     />
                                     <FaqItem
@@ -626,6 +632,372 @@ export default function Home() {
                                         information="A experiência infantil da Netflix faz parte da sua assinatura para que as crianças se divirtam em seu próprio espaço com séries e filmes familiares sob a supervisão dos responsáveis."
                                         information2="O recurso de controle parental, incluso nos perfis para crianças e protegido por PIN, permite restringir a classificação etária do conteúdo que as crianças podem ver e bloquear títulos específicos que você não quer que elas assistam."
                                     />
+                                </Box>
+                            </Box>
+                        </Box>
+                    </Box>
+                </Box>
+                <Box
+                    boxSizing={"border-box"}
+                    display={"block"}
+                    marginBottom={"64px"}
+                    width={"100%"}
+                >
+                    <Box
+                        boxSizing={"border-box"}
+                        display="block"
+                        width={"100%"}
+                    >
+                        <Box
+                            boxSizing={"border-box"}
+                            display={"block"}
+                            marginX={"207px"}
+                            marginY={"0px"}
+                            maxWidth={"783px"}
+                        >
+                            <Box
+                                as="form"
+                                flexDirection={"column"}
+                                boxSizing={"border-box"}
+                                display={"flex"}
+                                marginTop={0}
+                            >
+                                <Heading
+                                    as="h3"
+                                    boxSizing={"border-box"}
+                                    display={"block"}
+                                    margin={0}
+                                    textSizeAdjust={"100%"}
+                                    fontFamily={"var(--font-netflix-core)"}
+                                    fontSize={"16px"}
+                                    fontWeight={"400"}
+                                    lineHeight={"24px"}
+                                    textAlign={"center"}
+                                >
+                                    Quer assistir? Informe seu email para criar
+                                    ou reiniciar sua assinatura.
+                                </Heading>
+                                <Box
+                                    position={"relative"}
+                                    alignItems={"center"}
+                                    boxSizing={"border-box"}
+                                    display={"flex"}
+                                    flexDirection={"row"}
+                                    paddingTop={"6px"}
+                                    width={"100%"}
+                                >
+                                    <EmailInput width="100%" shadow={false} />
+                                </Box>
+                            </Box>
+                        </Box>
+                    </Box>
+                </Box>
+                <Box
+                    boxSizing={"border-box"}
+                    display={"block"}
+                    maxWidth={"none"}
+                    width={"full"}
+                >
+                    <Box
+                        boxSizing={"border-box"}
+                        display={"block"}
+                        height={"561px"}
+                        paddingBottom={"96px"}
+                        width={"100%"}
+                    >
+                        <Box
+                            as="footer"
+                            alignItems={"normal"}
+                            boxSizing={"border-box"}
+                            display={"inline-flex"}
+                            flexDirection={"column"}
+                            flexWrap={"wrap"}
+                            height={"auto"}
+                            justifyContent={"normal"}
+                            marginTop={"-36px"}
+                            padding={0}
+                            width={"100%"}
+                            maxWidth={"none"}
+                        >
+                            <Box
+                                alignItems={"normal"}
+                                boxSizing={"border-box"}
+                                display={"flex"}
+                                flexBasis={"auto"}
+                                flexGrow={0}
+                                flexShrink={1}
+                                flexWrap={"wrap"}
+                                justifyContent={"normal"}
+                                marginTop={"36px"}
+                                padding={"3px"}
+                                width="fit-content"
+                            >
+                                <Box
+                                    as="p"
+                                    boxSizing={"border-box"}
+                                    display={"block"}
+                                    margin={0}
+                                    padding={0}
+                                    fontFamily={"var(--font-netflix-core)"}
+                                    fontSize={"16px"}
+                                    fontWeight={"400"}
+                                    color={"rgba(255, 255, 255, 0.7)"}
+                                >
+                                    Dúvidas? Ligue para{" "}
+                                    <ChakraLink
+                                        as={NextLink}
+                                        href="tel:08005918943"
+                                        textDecoration="underline"
+                                        color={"rgba(255, 255, 255, 0.7)"}
+                                    >
+                                        0800 591 8943
+                                    </ChakraLink>
+                                </Box>
+                            </Box>
+
+                            <Box
+                                alignItems={"normal"}
+                                boxSizing={"border-box"}
+                                display={"flex"}
+                                flexBasis={"auto"}
+                                flexGrow={0}
+                                flexShrink={1}
+                                flexWrap={"wrap"}
+                                justifyContent={"normal"}
+                                marginTop={"30px"}
+                                padding={0}
+                                marginLeft={"0px"}
+                                width={"100%"}
+                            >
+                                <Box
+                                    boxSizing={"border-box"}
+                                    display={"flex"}
+                                    height={"auto"}
+                                    width={"100%"}
+                                    fontSize={"14px"}
+                                    padding="4px"
+                                    lineHeight={"21px"}
+                                >
+                                    <Box
+                                        as="ul"
+                                        alignItems={"flex-start"}
+                                        boxSizing={"border-box"}
+                                        display={"flex"}
+                                        flexDirection={"row"}
+                                        flexWrap={"wrap"}
+                                        height={"165px"}
+                                        justifyContent={"flex-start"}
+                                        marginLeft={"-12px"}
+                                        marginTop={"-12px"}
+                                        maxWidth={"none"}
+                                        padding={0}
+                                        width={"calc(100% + 0.75rem)"}
+                                    >
+                                        <FooterListItem
+                                            text="Perguntas Frequentes"
+                                            href="https://help.netflix.com/support/412"
+                                        />
+                                        <FooterListItem
+                                            text="Central de Ajuda"
+                                            href="https://help.netflix.com/"
+                                        />
+                                        <FooterListItem
+                                            text="Conta"
+                                            href="https://www.netflix.com/youraccount"
+                                        />
+                                        <FooterListItem
+                                            text="Media Center"
+                                            href="https://media.netflix.com/"
+                                        />
+
+                                        <FooterListItem
+                                            text="Relações com investidores"
+                                            href="http://ir.netflix.com/"
+                                        />
+                                        <FooterListItem
+                                            text="Carreiras"
+                                            href="https://jobs.netflix.com/jobs"
+                                        />
+                                        <FooterListItem
+                                            text="Resgatar cartão pré-pago"
+                                            href="https://www.netflix.com/redeem"
+                                        />
+                                        <FooterListItem
+                                            text="Comprar cartão pré-pago"
+                                            href="https://www.netflix.com/gift-cards"
+                                        />
+
+                                        <FooterListItem
+                                            text="Formas de assistir"
+                                            href="https://www.netflix.com/watch"
+                                        />
+                                        <FooterListItem
+                                            text="Termos de Uso"
+                                            href="https://help.netflix.com/legal/termsofuse"
+                                        />
+                                        <FooterListItem
+                                            text="Privacidade"
+                                            href="https://help.netflix.com/legal/privacy"
+                                        />
+                                        <FooterListItem
+                                            text="Preferências de cookies"
+                                            href="https://www.netflix.com/br/#"
+                                        />
+
+                                        <FooterListItem
+                                            text="Informações corporativas"
+                                            href="https://help.netflix.com/legal/corpinfo"
+                                        />
+                                        <FooterListItem
+                                            text="Entre em contato"
+                                            href="https://help.netflix.com/contactus"
+                                        />
+                                        <FooterListItem
+                                            text="Teste de velocidade"
+                                            href="https://fast.com/"
+                                        />
+                                        <FooterListItem
+                                            text="Avisos legais"
+                                            href="https://help.netflix.com/legal/notices"
+                                        />
+
+                                        <FooterListItem
+                                            text="Só na Netflix"
+                                            href="https://www.netflix.com/br/browse/genre/839338"
+                                        />
+                                    </Box>
+                                </Box>
+                            </Box>
+
+                            <Box
+                                alignItems={"normal"}
+                                boxSizing={"border-box"}
+                                display={"flex"}
+                                flexBasis={"auto"}
+                                flexGrow={0}
+                                flexShrink={1}
+                                flexWrap={"wrap"}
+                                justifyContent={"normal"}
+                                padding={"3px"}
+                                marginLeft={"0px"}
+                                marginTop={"42px"}
+                                width={"fit-content"}
+                            >
+                                <LanguageSelector />
+                            </Box>
+
+                            <Box
+                                width={"fit-content"}
+                                alignItems={"normal"}
+                                boxSizing={"border-box"}
+                                display={"flex"}
+                                flexBasis={"auto"}
+                                flexGrow={0}
+                                flexShrink={1}
+                                flexWrap={"wrap"}
+                                justifyContent={"normal"}
+                                marginLeft={0}
+                                marginTop={"36px"}
+                                padding={0}
+                            >
+                                <Box
+                                    as="p"
+                                    boxSizing={"border-box"}
+                                    display={"block"}
+                                    margin={0}
+                                    padding={0}
+                                    textSizeAdjust={"100%"}
+                                    fontSize={"14px"}
+                                    fontWeight={"400"}
+                                    color={"rgba(255, 255, 255, 0.7)"}
+                                    fontFamily={"var(--font-netflix-core)"}
+                                >
+                                    Netflix Brasil
+                                </Box>
+                            </Box>
+
+                            <Box
+                                boxSizing={"border-box"}
+                                display={"flex"}
+                                flexDirection={
+                                    "column"
+                                }
+                                marginTop={"36px"}
+                                width={"100%"}
+                                fontFamily={"var(--font-netflix-core)"}
+                                color={"rgba(255, 255, 255, 0.7)"}
+                                textAlign={
+                                    "left"
+                                }
+                            >
+                            
+                                <Box
+                                    as="p"
+                                    boxSizing={"border-box"}
+                                    margin={0}
+                                    marginBottom={"16px"}
+                                    fontSize={"13px"}
+                                    width={"100%"}
+                                >
+                                    Esta página é protegida pelo Google
+                                    reCAPTCHA para garantir que você não é um
+                                    robô.
+                                    <Text
+                                        as="span"
+                                        marginLeft={"4px"}
+                                        opacity={showKnowMore ? 0 : 1}
+                                        transition={"opacity 0.3s ease"}
+                                        onClick={() => setShowKnowMore(true)}
+                                        color={"rgb(68, 142, 244)"}
+                                        textDecoration={
+                                            "none"
+                                        }
+                                        _hover={{
+                                            cursor: "pointer",
+                                            textDecoration: "underline",
+                                        }}
+                                    >
+                                        Saiba mais.
+                                    </Text>
+                                </Box>
+
+                                <Box
+                                    boxSizing={"border-box"}
+                                    display={"flex"}
+                                    opacity={showKnowMore ? 1 : 0}
+                                    visibility={showKnowMore ? "visible" : "hidden"}
+                                    transition={"opacity 0.5s ease"}
+                                    fontSize={"13px"}
+                                    color="rgba(255, 255, 255, 0.5)"
+                                >
+                                    <Box as="p" margin={0} padding={0}>
+                                        As informações recolhidas pelo Google
+                                        reCAPTCHA estão sujeitas à{" "}
+                                        <a
+                                            href="https://policies.google.com/privacy"
+                                            style={{
+                                                color: "rgb(68, 142, 244)",
+                                                textDecoration: "none",
+                                            }}
+                                        >
+                                            Política de Privacidade
+                                        </a>
+                                        {" "}e{" "}
+                                        <a
+                                            href="https://policies.google.com/terms"
+                                            style={{
+                                                color: "rgb(68, 142, 244)",
+                                                textDecoration: "none",
+                                            }}
+                                        >
+                                            Termos de Uso
+                                        </a>
+                                        , e são usadas para oferecer, manter e
+                                        melhorar o serviço reCAPTCHA e por
+                                        questões de segurança (não são usadas
+                                        para exibir anúncios personalizados pelo
+                                        Google).
+                                    </Box>
                                 </Box>
                             </Box>
                         </Box>

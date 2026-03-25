@@ -5,9 +5,10 @@ import NextImage from 'next/image'
 
 interface EmailInputProps {
     width: string;
+    shadow?: boolean;
 }
 
-export default function EmailInput({width}: EmailInputProps) {
+export default function EmailInput({width, shadow}: EmailInputProps) {
 
     const [email, setEmail] = useState("");
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -41,7 +42,7 @@ export default function EmailInput({width}: EmailInputProps) {
                                   : "1px solid green" //se passar
                         }
                         bg="rgba(24, 23, 21, 0.6)"
-                        boxShadow="0 0 30px rgba(109, 99, 95, 0.1)"
+                        boxShadow={shadow ? "0 0 30px rgba(109, 99, 95, 0.1)" : undefined}
                         paddingX="16px"
                         paddingTop="24px"
                         paddingBottom="8px"
